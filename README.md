@@ -1,3 +1,7 @@
+## Requirements
+1. Java 23 SDK (OpenJDK)
+2. https://github.com/openjdk/jextract available from the command line
+
 ## Compiling and running SDL3 using Zig
 ```shell
 mvn install
