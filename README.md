@@ -1,6 +1,7 @@
 ## Requirements
 1. Java 23 SDK (OpenJDK)
-2. https://github.com/openjdk/jextract available from the command line
+2. [jextract](https://github.com/openjdk/jextract) command available from the command line
+3. [zig](https://github.com/ziglang/zig) command available from the command line
 
 ## Compiling and running SDL3 using Zig
 ```shell
