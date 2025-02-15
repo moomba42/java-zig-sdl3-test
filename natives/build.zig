@@ -19,5 +19,6 @@ pub fn build(b: *std.Build) void {
         .preferred_link_mode = .dynamic,
     });
     const sdl_lib = sdl_dep.artifact("SDL3");
+    b.installArtifact(sdl_lib);
     lib.root_module.linkLibrary(sdl_lib);
 }

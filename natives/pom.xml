@@ -12,24 +12,18 @@
         <maven.compiler.source>23</maven.compiler.source>
         <maven.compiler.target>23</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <zig.optimize/>
+        <sdl.path>zig-out/lib/</sdl.path>
     </properties>
 
     <profiles>
         <profile>
-            <id>debug</id>
+            <id>use-cmake-lib</id>
             <properties>
-                <zig.optimize>Debug</zig.optimize>
+                <sdl.path>SDL/build/</sdl.path>
             </properties>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
-        </profile>
-        <profile>
-            <id>release</id>
-            <properties>
-                <zig.optimize>ReleaseFast</zig.optimize>
-            </properties>
         </profile>
     </profiles>
 
@@ -47,7 +41,6 @@
                             <executable>zig</executable>
                             <arguments>
                                 <argument>build</argument>
-                                <argument>-Doptimize=${zig.optimize}</argument>
                             </arguments>
                         </configuration>
                         <goals>
@@ -75,7 +68,7 @@
                                     </includes>
                                 </resource>
                                 <resource>
-                                    <directory>.</directory>
+                                    <directory>${sdl.path}</directory>
                                     <includes>
                                         <include>libSDL3.dylib</include>
                                     </includes>
