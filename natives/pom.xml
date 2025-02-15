@@ -77,6 +77,12 @@
                                 <resource>
                                     <directory>.</directory>
                                     <includes>
+                                        <include>libSDL3.dylib</include>
+                                    </includes>
+                                </resource>
+                                <resource>
+                                    <directory>.</directory>
+                                    <includes>
                                         <include>java-zig-sdl3-test.h</include>
                                     </includes>
                                 </resource>

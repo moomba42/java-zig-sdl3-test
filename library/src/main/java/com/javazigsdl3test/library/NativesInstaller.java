@@ -13,6 +13,7 @@ public class NativesInstaller {
      */
     public static Path ensureLoaded() throws IOException {
         Path nativesFolderPath = Files.createTempDirectory("java-zig-sdl3-test-natives");
+        System.load(copyLibrary("SDL3", nativesFolderPath).toString());
         System.load(copyLibrary("java-zig-sdl3-test", nativesFolderPath).toString());
         return nativesFolderPath;
     }
